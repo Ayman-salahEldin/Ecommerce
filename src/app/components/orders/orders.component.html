@@ -1,0 +1,19 @@
+
+<section class="bg-main-light rounded-4 w-75 mx-auto shadow p-2 my-2">
+    <form [formGroup]="orders" action="" (ngSubmit)="orderSubmit()">
+        <div class="my-2">
+            <label for="details">details</label>
+            <input formControlName="details" id="details" type="text" class="form-control">
+        </div>
+        <div class="my-2">
+            <label for="phone">phone</label>
+            <input formControlName="phone" id="phone" type="tel" class="form-control">
+        </div>
+        <div class="my-2">
+            <label for="city">city</label>
+            <input formControlName="city" id="city" type="text" class="form-control">
+        </div>
+        <button class="btn btn-main" type="submit">Pay Now</button>
+        
+    </form>
+</section>

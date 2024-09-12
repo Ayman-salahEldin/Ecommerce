@@ -1,0 +1,38 @@
+
+<section>
+    <h1 class="text-center text-main my-2">Forget Password</h1>
+   @if (step==1) {
+    <form [formGroup]="verifyEmail" class="bg-main-light rounded-4 shadow p-3" (ngSubmit)="verifyEmailSubmit()">
+        <div class="my-2">
+            <label for="">email</label>
+            <input formControlName="email" id="email" type="email" class="form-control">
+        </div>
+        <button [disabled]="verifyEmail.invalid" class="btn-main">Verify Email</button>
+    </form>
+   }
+   @else if (step==2) {
+    <form [formGroup]="verifyCode" class="bg-main-light rounded-4 shadow p-3"  (ngSubmit)="verifyCodeSubmit()">
+        <div class="my-2">
+            <label for="">resetCode</label>
+            <input formControlName="resetCode" id="resetCode" type="text" class="form-control">
+        </div>
+        <button [disabled]="verifyCode.invalid" class="btn-main">Verify Code</button>
+    </form>
+   }
+
+    @else if (step==3) {
+        <form [formGroup]="resetPassword" class="bg-main-light rounded-4 shadow p-3" (ngSubmit)="resetPasswoedSubmit()">
+            <div class="my-2">
+                <label for="">email</label>
+                <input readonly formControlName="email" id="email" type="email" class="form-control">
+            </div>
+            <div class="my-2">
+                <label for="">new Paswword</label>
+                <input formControlName="newPassword" id="newPaswword" type="password" class="form-control">
+            </div>
+            <button [disabled]="resetPassword.invalid" class="btn-main">new Pasword</button>
+        </form>
+    }
+
+    
+</section>
